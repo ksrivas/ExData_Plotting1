@@ -8,6 +8,12 @@ library(data.table)
 # The solution to project at the end of week 1:
 # Reading is same as for plot 1 and described in plot1.r ...
 # READING THE FILE AND SUBSETTING IT
+fileUrl<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+if(!file.exists("exdata-data-household_power_consumption.zip")) 
+{
+	download.file(fileUrl,dest="exdata-data-household_power_consumption.zip",method='curl')
+}
+
 if(!file.exists("./household_power_consumption.txt")) unzip("exdata-data-household_power_consumption.zip")
 PowerConsumData<-filter(fread("household_power_consumption.txt",
                             sep=";",header=TRUE,
@@ -40,6 +46,7 @@ PowerConsumData_Final$Time<-strptime(PowerConsumData_Final$timetemp,"%Y-%m-%d %H
 # But it can also be added with main="Plot2" for example...
 
 # OUTPUT IN PNG FORMAT OF HEIGHT AND WIDTH = 480
+if(!file.exists("figure")){dir.create("./figure/")}
 png(file="./figure/plot2.png",width=480,height=480)
 with(PowerConsumData_Final,{ 
   plot(Time,Global_active_power,type="l",xlab="",ylab="Global active power(kilowatts)",lwd="2") 

@@ -10,6 +10,12 @@ library(data.table)
 
 # The solution to project at the end of week 1
 # READING THE FILE AND SUBSETTING IT
+fileUrl<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+if(!file.exists("exdata-data-household_power_consumption.zip")) 
+{
+	download.file(fileUrl,dest="exdata-data-household_power_consumption.zip",method='curl')
+}
+
 unzip("exdata-data-household_power_consumption.zip")
 # Read and filter the data. One can specify the data
 # which is to be read. Critical is that stringsasFactors=TRUE,
@@ -28,6 +34,7 @@ PowerConsumData<-filter(fread("household_power_consumption.txt",
 # file device png: width and height as given in the quiz
 #OUTPUT IN PNG FORMAT HERE
 
+if(!file.exists("figure")){dir.create("./figure/")}
 png(file="./figure/plot1.png",width=480,height=480)
 hist(PowerConsumData$Global_active_power,xlab="Global Active Power (kilowatts)",
           main="Global Active Power",col="red")

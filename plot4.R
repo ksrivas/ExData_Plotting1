@@ -5,6 +5,11 @@ library(data.table)
 # The solution to project at the end of week 1
 # Check if file exists otherwise unzip. 
 # READING THE FILE AND SUBSETTING IT
+fileUrl<-"https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+if(!file.exists("exdata-data-household_power_consumption.zip")) 
+{
+	download.file(fileUrl,dest="exdata-data-household_power_consumption.zip",method='curl')
+}
 
 if(!file.exists("./household_power_consumption.txt")) unzip("exdata-data-household_power_consumption.zip")
 PowerConsumData<-filter(fread("household_power_consumption.txt",
@@ -30,6 +35,7 @@ PowerConsumData_Final$Time<-strptime(PowerConsumData_Final$timetemp,"%Y-%m-%d %H
 
 # OUTPUT IN PNG FORMAT OF HEIGHT AND WIDTH = 480
 # This is the answer and in the exact format as desired File device
+if(!file.exists("figure")){dir.create("./figure/")}
 png(file="./figure/plot4.png",width=480,height=480)
 
 
