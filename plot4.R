@@ -34,7 +34,7 @@ png(file="./figure/plot4.png",width=480,height=480)
 
 
 # 2x2 
-par(mfrow = c(2,2),mar=c(4,4,2,2),oma=c(2,2,2,2),xpd=TRUE)
+par(mfrow = c(2,2),mar=c(4,4,1,1),oma=c(1,1,0,0),xpd=TRUE)
 with(PowerConsumData_Final,{ 
   plot(Time,PowerConsumData_Final$Global_active_power,
        type="l",lwd="1.0",xlab="",
@@ -45,6 +45,9 @@ with(PowerConsumData_Final,{
   lines(Time,Sub_metering_1,type="l",lwd="1.0",col="Black") 
   lines(Time,Sub_metering_2,type="l",lwd="1.0",col="Red") 
   lines(Time,Sub_metering_3,type="l",lwd="1.0",col="Blue") 
+  legend("topright",c("Sub_metering_1","Sub_metering_2","Sub_metering_3")
+         ,lty=c(1,1,1),lwd=c(2,2,2),xjust=0,y.intersp=1.0,
+         col=c("black","red","blue"),adj=0,bty="n" )
   plot(Time,PowerConsumData_Final$Global_reactive_power,type="l",
        lwd="1.0",xlab="datetime",ylab="Global_reactive_power")
   
