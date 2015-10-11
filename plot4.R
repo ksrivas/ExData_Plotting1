@@ -34,7 +34,7 @@ png(file="./figure/plot4.png",width=480,height=480)
 
 
 # 2x2 
-par(mfrow = c(2,2),mar=c(4,4,1,1),oma=c(1,1,1,1),xpd=TRUE)
+par(mfrow = c(2,2),mar=c(4,4,1,1),oma=c(0,0,2,2),xpd=TRUE)
 with(PowerConsumData_Final,{ 
   plot(Time,PowerConsumData_Final$Global_active_power,
        type="l",lwd="1.0",xlab="",
