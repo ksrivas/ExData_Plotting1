@@ -113,16 +113,19 @@ The four plots that you will need to construct are shown below.
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
 ## Working with the code:
-There are four files plot1.R, plot2.R, plot3.R and plot4.R along with the dataset zip file.
-Adding the unzipped dataset gave an error and hence I did not add that. But the code can
+There are four files plot1.R, plot2.R, plot3.R and plot4.R.
+Adding the unzipped dataset gave an error due to too large dataset and hence I did not add that. But the code can
 unzip it and work with the files. The file reads only a subset of the main data set as described above.
+The overall image size of all is 480x480. 
 
  Step 1:) Do a source of the input files in the r console as for example source("plot1.R") and the corresponding output
         file name plot1.png is generated.
         
- Step 2:) Four output files are generated in the directory "./figure" plot1.png, plot2.png, plot3.png and plot4.png respectively which corresponds to Plot 1, Plot 2, Plot 3 and Plot 4 described above.
+ Step 2:) Four output files are generated in the directory "./figure" plot1.png, plot2.png, plot3.png and plot4.png respectively which corresponds to Plot 1, Plot 2, Plot 3 and Plot 4 described above.~ The figure directory must be present
+as the script does not account for its creation. In order to avoid this, just remove ./figure from the png device
+instruction.
 
-MY output as generated is shown here:
+My output as generated is shown here:
 ### Plot 1
 
 
