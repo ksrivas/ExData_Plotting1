@@ -112,3 +112,33 @@ The four plots that you will need to construct are shown below.
 
 ![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5.png) 
 
+## Working with the code:
+There are four files plot1.R, plot2.R, plot3.R and plot4.R along with the dataset zip file.
+Adding the unzipped dataset gave an error and hence I did not add that. But the code can
+unzip it and work with the files. The file reads only a subset of the main data set as described above.
+
+ Step 1:) Do a source of the input files in the r console as for example source("plot1.R") and the corresponding output
+        file name plot1.png is generated.
+        
+ Step 2:) Four output files are generated in the directory "./figure" plot1.png, plot2.png, plot3.png and plot4.png respectively which corresponds to Plot 1, Plot 2, Plot 3 and Plot 4 described above.
+
+MY output as generated is shown here:
+### Plot 1
+
+
+![Plot from plot1.R](figure/plot1.png) 
+
+
+### Plot 2
+
+![plot from plot2.R](figure/plot2.png) 
+
+
+### Plot 3
+
+![plot from plot3.R](figure/plot3.png) 
+
+
+### Plot 4
+
+![Plot from plot4.R](figure/plot4.png) 
