@@ -32,7 +32,7 @@ PowerConsumData_Final$Time<-strptime(PowerConsumData_Final$timetemp,"%Y-%m-%d %H
 # OUTPUT IN PNG FORMAT OF HEIGHT AND WIDTH = 480
 png(file="./figure/plot3.png",width=480,height=480)
 with(PowerConsumData_Final,{ 
-  plot(Time,Sub_metering_1,type="n",main="Plot 3",xlab="",ylab="Energy sub metering")
+  plot(Time,Sub_metering_1,type="n",main="",xlab="",ylab="Energy sub metering")
   lines(Time,Sub_metering_1,type="l",lwd="1.5",col="Black") 
   lines(Time,Sub_metering_2,type="l",lwd="1.5",col="Red") 
   lines(Time,Sub_metering_3,type="l",lwd="1.5",col="Blue") 
